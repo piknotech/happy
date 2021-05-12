@@ -7,9 +7,9 @@
 # Setup.hs test".
 #
 HAPPY=$(shell which happy)
-ifeq "$(filter $(dir $(shell pwd))%,$(HAPPY))" ""
-HAPPY=../dist/build/happy/happy
-endif
+#ifeq "$(filter $(dir $(shell pwd))%,$(HAPPY))" ""
+#HAPPY=../dist/build/happy/happy
+#endif
 
 # NOTE: This assumes that a working `ghc` is on $PATH; this may not necessarily be the same GHC used by `cabal` for building `alex`.
 HC = ghc
@@ -103,6 +103,7 @@ check.%.y : %.y
 %$(HS_PROG_EXT) : %.hs
 	$(HC) $(HC_OPTS) $($*_LD_OPTS) $< -o $@
 
+#all :: $(CHECK_ERROR_TESTS) $(ALL_TESTS)
 all :: $(ALL_TESTS)
 
 check-todo::
