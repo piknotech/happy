@@ -24,5 +24,4 @@ install:
  - cabal update
 
 script:
- - make sdist
- - make sdist-test-only
+ - make sdist-test
