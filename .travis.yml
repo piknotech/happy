@@ -24,4 +24,4 @@ install:
  - cabal update
 
 script:
- - make sdist-test
+ - cabal build -f -bootstrap
