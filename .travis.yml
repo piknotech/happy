@@ -23,9 +23,10 @@ before_install:
 install:
  - cabal update
 
+# We only perform `make sdist-test` on GHC 8.10.1 due to its long running time. On other GHC versions we simply run the tests.
 script:
  - | 
-   if [[ $(ghc --numeric-version) == "8.10.1" ]] # only perform make sdist-test once
+   if [[ $(ghc --numeric-version) == "8.10.1" ]]
    then
      make sdist-test
    else
