@@ -7,6 +7,7 @@ main = do
   let tests = defaultTestFiles ++ (if isBootstrapped then attributeGrammarTestFiles else [])
   let setup = TestSetup {
     happyExec = "happy",
+    haskellCompilerExec = "ghc",
     defaultTests = tests,
     customTests = [],
     customDataDir = dir,
